@@ -4,8 +4,8 @@ workflows:
     jobs:
       - build:
           context:
-            - Test
             - Test2
+            - Test
 jobs:
   build:
     docker: 
