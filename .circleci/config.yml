@@ -1,16 +1,14 @@
 version: 2.1
-
 workflows:
-  my-workflow:
+  build:
     jobs:
-      - welcome/run:
+      - build:
           context:
-            - Test
-            - Test2            
+            -Test
+            -Test2
 jobs:
-  welcome/run:
+  build:
+    docker: 
+      - image: alpine:latest
     steps:
-      - checkout
-      - run:
-          name: "echo environment variables from org-global context"
-          command: echo $TEST
+      - run: echo $TEST
